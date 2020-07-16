@@ -1,6 +1,6 @@
 """
 URLify:
-Write a method to replace all spaces in  astring with %20
+Write a method to replace all spaces in a string with %20
 You may assume that the string has sufficient space at the end to hold the additional characters
 and that you are given the true length of the string. Operation has to be done in place
 """
@@ -97,9 +97,7 @@ def url(string,length):
     listString = list(string)
     while stringPos >= 0:
         if listString[stringPos] == " ":
-            listString[buildPos] = "0"
-            listString[buildPos-1] = "2"
-            listString[buildPos-2] = "%"
+            listString[buildPos-2:buildPos+1] = "%20"
             buildPos -=3
         else:
             listString[buildPos] = listString[stringPos]
