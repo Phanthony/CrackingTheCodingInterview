@@ -35,17 +35,40 @@ class TestCase():
         
         res = removeDup(llist)
         
-        self.tester(1,expected==llist)
+        self.tester(1,testLists(res,expected))
         
+    def test2(self):
+        
+        llist = LinkedList()
+        llist.append(1)
+        llist.append(1)
+        
+        expected = LinkedList()
+        expected.append(1)
+        
+        res = removeDup(llist)
+        
+        self.tester(2, testLists(res,expected))
+    
     def runTest(self):
         self.test1()
+        self.test2()
+        
+def testLists(l1,l2):
+    c1 = l1.head
+    c2 = l2.head
+    while c1 != None:
+        if c1.data != c2.data:
+            return false
+        c1 = c1.next
+        c2 = c2.next
+    return True
         
 def removeDup(linkedList):
     """ 
     use a dictionary to remember what data entries have already been seen
     while looping through the linked list
     """
-    print(linkedList)
     seen = {}
     
     curr = linkedList.head
@@ -56,17 +79,17 @@ def removeDup(linkedList):
         count = seen.get(curr.data,0)
         if count == 0:
             seen[curr.data] = 1
+            prev = curr
         else:
             temp = curr.next
             prev.next = temp
-        prev = curr
         curr = curr.next
-    """   
+        
     count = seen.get(curr.data,0)
     if count != 0:
         prev.next = None
-    """
-    print(linkedList)
+    return linkedList
+    
 r = TestCase()
 r.runTest()
     
