@@ -91,7 +91,7 @@ def stringComp(string):
     occuranceList.append((currentChar,seen))
     
     compString = ""
-    
+
     for char,times in occuranceList:
         compString += (char + str(times))
     
