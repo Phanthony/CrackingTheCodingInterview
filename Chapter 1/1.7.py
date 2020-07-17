@@ -126,6 +126,8 @@ def rotMat(matrix):
     n is length of matrix
     for some byte to get the new row index - based on old column index
     for some byte to get the new column index - based on function (N - 1) - old row index
+    
+    Start by rotating outer layers and work inwards
     """
     print()
     for row in matrix:
@@ -153,6 +155,5 @@ def rotMat(matrix):
         print()        
     return matrix
 
-        
 r = testCase()
 r.runTest()
