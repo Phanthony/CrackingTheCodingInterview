@@ -2,6 +2,16 @@
 Chapter 2: Linked Lists
 """
 
+def testLists(l1,l2):
+    c1 = l1.head
+    c2 = l2.head
+    while c1 != None:
+        if c1.data != c2.data:
+            return false
+        c1 = c1.next
+        c2 = c2.next
+    return True
+
 class ListNode:
     """
     A node in a singly-linked list.

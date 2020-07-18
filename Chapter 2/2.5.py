@@ -33,10 +33,8 @@ class TestCase():
         llist3.append(2)
         
         res = sumList(llist,llist2)
-        print(res)
-        print(llist3)
         
-        self.tester(1,llist3==res)
+        self.tester(1,testLists(res, llist3))
     
     def runTest(self):
         
